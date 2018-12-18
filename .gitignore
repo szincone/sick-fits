@@ -62,12 +62,21 @@ typings/
 
 # next.js build output
 .next
+.next/
+.build/
+layout.md
 
 # nuxt.js build output
 .nuxt
+
+# keep stepping
+haters/
 
 # vuepress build output
 .vuepress/dist
 
 # Serverless directories
 .serverless
+
+# macOS
+.DS_Store
