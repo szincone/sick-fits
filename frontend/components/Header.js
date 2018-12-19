@@ -1,6 +1,22 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Nav from "./Nav";
-import Link from "next/link";
+import Router from "next/router";
+import NProgress from "nprogress";
+
+// NProgress bar
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+};
+
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+};
+
+Router.onRouteChangeError = () => {
+  NProgress.done();
+};
+// end nprogress
 
 // styled-components
 const Logo = styled.h1`
