@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/szincone/sick-fits-backend-45011546-01/dev
-# timestamp: Thu Dec 20 2018 23:28:56 GMT-0700 (Mountain Standard Time)
+# timestamp: Thu Dec 20 2018 23:45:58 GMT-0700 (Mountain Standard Time)
 
 type AggregateUser {
   count: Int!
