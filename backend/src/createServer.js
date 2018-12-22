@@ -8,7 +8,7 @@ const db = require("./db.js");
 function createServer() {
   return new GraphQLServer({
     typeDefs: "src/schema.graphql",
-    resolver: {
+    resolvers: {
       Mutation,
       Query,
     },
@@ -18,3 +18,5 @@ function createServer() {
     context: req => ({ ...req, db }),
   });
 }
+
+module.exports = createServer;
