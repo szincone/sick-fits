@@ -12,7 +12,9 @@ class CreateItems extends Component {
     largeImage: "",
     price: 0,
   };
-
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
   render() {
     return (
       <Form>
@@ -24,8 +26,9 @@ class CreateItems extends Component {
               id="title"
               name="title"
               placeholder="Title"
-              required
               value={this.state.title}
+              onChange={this.handleChange}
+              required
             />
           </label>
         </fieldset>
