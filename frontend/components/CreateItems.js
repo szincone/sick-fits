@@ -12,12 +12,20 @@ class CreateItems extends Component {
     largeImage: "",
     price: 0,
   };
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChange = e => {
+    const { name, type, value } = e.target;
+    const val = type === "number" ? parseFloat(value) : value;
+    console.log("Value", val);
+    this.setState({ [name]: val });
   };
   render() {
     return (
-      <Form>
+      <Form
+        onSubmit={e => {
+          e.preventDefault();
+          console.log("THIS.STATE", this.state);
+        }}
+      >
         <fieldset>
           <label htmlFor="title">
             Title
@@ -31,6 +39,34 @@ class CreateItems extends Component {
               required
             />
           </label>
+
+          <label htmlFor="price">
+            Price
+            <input
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Price"
+              value={this.state.price}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+
+          <label htmlFor="description">
+            Description
+            <textarea
+              type="number"
+              id="description"
+              name="description"
+              placeholder="Enter A Description"
+              value={this.state.description}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+
+          <button type="submit">Submit</button>
         </fieldset>
       </Form>
     );
